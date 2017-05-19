@@ -109,8 +109,8 @@ int main(){
         			}			
 				break;}
            		case 2:{
-             			int number;
-				cout << "Ingrese la posicion que quiere eliminar: " << endl;
+				int number = 0;
+			       	cout << "Ingrese la posicion que quiere eliminar: " << endl;
 				for(int i = 0; i < museo.size(); i++){
 					cout << i << " --> " << museo[i].getnombre() << endl;
 				}
@@ -119,18 +119,18 @@ int main(){
 				cout << "Obra ha eliminada" << endl;	
                 		break;}
 			case 3:{
-				int numero;
+				int numero = 0;
 				cout << "Ingrese la posicion que quiere Transferir: " << endl;
                                 for(int i = 0; i < museo.size(); i++){
                                         cout << i << " --> " << museo[i].getnombre() << endl;
                                 }
 				cin >> numero;
-				tranferencia.push_back(museo[numero]);
+				transferencia.push_back(museo[numero]);
 				museo.erase(museo.begin() + number);
                                 cout << "Obra ha sido transferida" << endl;
 				break;}
 			case 4:{
-				
+				Reporte(museo);	
 				break;}
 	     		case 5:{
 				salir = true;
@@ -159,7 +159,7 @@ string RandomHexadecimal(){
 	stringstream random2;
 	string random3;
 	for(int i = 0; i < 6; i++){
-		random = rand() % 15 + o;
+		random = rand() % 15 + 0;
 		if(random == 10){
 			random2 << "A";
 		} else if(random == 11){
