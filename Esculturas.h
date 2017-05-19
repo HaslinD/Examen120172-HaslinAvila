@@ -8,7 +8,7 @@ class Esculturas : public ObrasDA{
 	public:
 		Esculturas();
 		Esculturas(string, string, string, string, string, string);
-	private:		
+			
 		string peso;
 		string material;
 

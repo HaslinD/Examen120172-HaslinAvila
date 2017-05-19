@@ -5,12 +5,6 @@
 using namespace std;
 
 class ObrasDA{
-	private:
-                string id;
-                string nombre;
-                string artista;
-                string fechaing;   
-
 	public:
 		ObrasDA();
 		ObrasDA(string, string, string, string);	 
@@ -18,5 +12,10 @@ class ObrasDA{
 		string getnombre();
 		string getartista();
 		string getfechaing();		
+
+		string id;
+                string nombre;
+                string artista;
+                string fechaing;
 
 };

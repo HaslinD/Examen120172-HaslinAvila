@@ -1,6 +1,9 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <sstream>
+#include <stdio.h>
+#include <stdlib.h>
 #include "ObrasDA.h"
 #include "Literatura.h"
 #include "Pinturas.h"
@@ -11,13 +14,15 @@ using namespace std;
 
 int menu();
 int menu2();
+string RandomHexadecimal();
+void Reporte(vector<ObrasDA>);
 
 int main(){
 	vector<ObrasDA>museo;
 	vector<ObrasDA>transferencia;
 	bool salir = false;
 	string nombre, artista, fechaing; 	
-	string id = "";
+	
         while (!salir){
 		switch(menu()){
 			case 1:{
@@ -25,6 +30,8 @@ int main(){
                 			switch(menu()){
                         		case 1:{
 						string genero, epoca;
+					        string id = RandomHexadecimal();
+
 						cout << "Obras de Literatura" << endl;
 						cout << "Ingrese el Nombre de la Obra: ";
 						cin >> nombre;
@@ -42,6 +49,8 @@ int main(){
                                 		break;}
                         		case 2:{
 						string peso, material;
+					        string id = RandomHexadecimal();
+
 						cout << "Esculturas" << endl;
 						cout << "Ingrese el Nombre de la Obra: ";
                                                 cin >> nombre;
@@ -59,6 +68,8 @@ int main(){
                                 		break;}
                         		case 3:{
 						string matlienzo, tecnica;
+					        string id = RandomHexadecimal();
+
 						cout << "Pinturas" << endl;
 						cout << "Ingrese el Nombre de la Obra: ";
                                                 cin >> nombre;
@@ -76,6 +87,8 @@ int main(){
                                 		break;}
                         		case 4:{
 						string tipoTerreno;
+					        string id = RandomHexadecimal();
+
 						cout << "Diseños Arquitectonicos" << endl;
 						cout << "Ingrese el Nombre de la Obra: ";
                                                 cin >> nombre;
@@ -96,7 +109,14 @@ int main(){
         			}			
 				break;}
            		case 2:{
-                		
+             			int number;
+				cout << "Ingrese la posicion que quiere eliminar: " << endl;
+				for(int i = 0; i < museo.size(); i++){
+					cout << i << " --> " << museo[i].getnombre() << endl;
+				}
+				cin >> number;
+				museo.erase(museo.begin() + number);
+				cout << "Obra ha eliminada" << endl;	
                 		break;}
 			case 3:{
 
@@ -114,7 +134,42 @@ int main(){
 }
 
 void Reporte(vector<ObrasDA> obras){
-	cout << "Obras de Arte"
+	cout << "Obras de Arte" << endl;
+	for(int i = 0; i < obras.size(); i++){
+		cout << "--------------------------------------" << endl;
+		cout << "Obra: " << (i) << endl;
+		cout << "Nombre: " << obras.at(i).getnombre() << endl;
+		cout << "Id: " << obras.at(i).getid() << endl;
+		cout << "Artista: " << obras.at(i).getartista() << endl;
+		cout << "Fecha: " << obras.at(i).getfechaing() << endl;
+		cout << "--------------------------------------" << endl;
+	}
+}
+
+string RandomHexadecimal(){
+	int random;
+	stringstream random2;
+	string random3;
+	for(int i = 0; i < 6; i++){
+		random = rand() % 15 + o;
+		if(random == 10){
+			random2 << "A";
+		} else if(random == 11){
+                        random2 << "B";
+                } else if(random == 12){
+                        random2 << "C";
+                } else if(random == 13){
+                        random2 << "D";
+                } else if(random == 14){
+                        random2 << "E";
+                } else if(random == 15){
+                        random2 << "F";
+                } else {
+			random2 << random;
+		}
+	}
+	random3 = random2.str();
+	return random3;
 }
 
 int menu(){
