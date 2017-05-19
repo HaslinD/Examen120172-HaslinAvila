@@ -119,7 +119,15 @@ int main(){
 				cout << "Obra ha eliminada" << endl;	
                 		break;}
 			case 3:{
-
+				int numero;
+				cout << "Ingrese la posicion que quiere Transferir: " << endl;
+                                for(int i = 0; i < museo.size(); i++){
+                                        cout << i << " --> " << museo[i].getnombre() << endl;
+                                }
+				cin >> numero;
+				tranferencia.push_back(museo[numero]);
+				museo.erase(museo.begin() + number);
+                                cout << "Obra ha sido transferida" << endl;
 				break;}
 			case 4:{
 				
