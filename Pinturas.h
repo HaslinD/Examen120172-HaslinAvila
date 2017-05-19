@@ -9,7 +9,7 @@ class Pinturas : public ObrasDA{
 	public:
 		Pinturas();
 		Pinturas(string, string, string, string, string, string);
-
+	private:
 		string matlienzo;
 		string tecnica;
 

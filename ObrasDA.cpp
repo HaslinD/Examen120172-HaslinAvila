@@ -12,3 +12,19 @@ ObrasDA::ObrasDA(string id, string nombre, string artista, string fecahing){
 	this -> fechaing = fechaing;
 
 }
+
+string ObrasDA::getid(){
+	return id;
+}
+
+string ObrasDA::getnombre(){
+	return nombre;
+}
+
+string ObrasDA::getartista(){
+	return artista;
+}
+
+string ObrasDA::getfechaing(){
+	return fechaing;
+}

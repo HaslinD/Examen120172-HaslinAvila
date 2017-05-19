@@ -9,7 +9,7 @@ class DiseniosArqui : public ObrasDA{
 	public: 
 		DiseniosArqui();
 		DiseniosArqui(string, string, string, string, string);
-
+	private:
 		string disenioter;
 
 };
