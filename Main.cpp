@@ -25,7 +25,7 @@ int main(){
 	
         while (!salir){
 		switch(menu()){
-			case 1:{
+			case 1:{ //creacion de Obras
 				while (!salir){
                 			switch(menu()){
                         		case 1:{
@@ -108,17 +108,17 @@ int main(){
                 			}
         			}			
 				break;}
-           		case 2:{
-				int number = 0;
+           		case 2:{// Eliminacion de Obras
+				int numbers =  0;
 			       	cout << "Ingrese la posicion que quiere eliminar: " << endl;
 				for(int i = 0; i < museo.size(); i++){
 					cout << i << " --> " << museo[i].getnombre() << endl;
 				}
-				cin >> number;
-				museo.erase(museo.begin() + number);
+				cin >> numbers;
+				museo.erase(museo.begin() + numbers);
 				cout << "Obra ha eliminada" << endl;	
                 		break;}
-			case 3:{
+			case 3:{ // Tranferencia de Obras
 				int numero = 0;
 				cout << "Ingrese la posicion que quiere Transferir: " << endl;
                                 for(int i = 0; i < museo.size(); i++){
@@ -126,10 +126,10 @@ int main(){
                                 }
 				cin >> numero;
 				transferencia.push_back(museo[numero]);
-				museo.erase(museo.begin() + number);
+				museo.erase(museo.begin() + numero);
                                 cout << "Obra ha sido transferida" << endl;
 				break;}
-			case 4:{
+			case 4:{// Reportes
 				Reporte(museo);	
 				break;}
 	     		case 5:{
