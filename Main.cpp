@@ -27,7 +27,7 @@ int main(){
 		switch(menu()){
 			case 1:{ //creacion de Obras
 				while (!salir){
-                			switch(menu()){
+                			switch(menu2()){
                         		case 1:{
 						string genero, epoca;
 					        string id = RandomHexadecimal();
