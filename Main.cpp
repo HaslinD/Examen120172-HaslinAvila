@@ -28,7 +28,7 @@ int main(){
 			case 1:{ //creacion de Obras
 				while (!salir){
                 			switch(menu2()){
-                        		case 1:{
+                        		case 1:{// Literatura
 						string genero, epoca;
 					        string id = RandomHexadecimal();
 
@@ -47,7 +47,7 @@ int main(){
 						museo.push_back(literatura);
 					
                                 		break;}
-                        		case 2:{
+                        		case 2:{// Esculturas
 						string peso, material;
 					        string id = RandomHexadecimal();
 
@@ -66,7 +66,7 @@ int main(){
 						museo.push_back(esculturas);
 												
                                 		break;}
-                        		case 3:{
+                        		case 3:{// Pinturas
 						string matlienzo, tecnica;
 					        string id = RandomHexadecimal();
 
@@ -85,7 +85,7 @@ int main(){
 						museo.push_back(pinturas);
 
                                 		break;}
-                        		case 4:{
+                        		case 4:{// Diseños Arquitectonicos
 						string tipoTerreno;
 					        string id = RandomHexadecimal();
 
